@@ -1,0 +1,13 @@
+.activeLink  {
+    /* color: rgb(0, 139, 7) !important; */
+    border-bottom: 2px solid rgb(0, 146, 204);
+}
+
+.regularLink {
+    color: #000000;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration: none;
+}

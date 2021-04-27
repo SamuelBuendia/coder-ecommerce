@@ -13,6 +13,7 @@ const ItemListContainer = () => {
                     id: 1,
                     title: 'Camisa',
                     description: 'Esta es una camisa',
+                    stock: 6,
                     price: '50.000',
                     pictureURL: 'https://cutt.ly/TvIWbW7'
                 },
@@ -20,6 +21,7 @@ const ItemListContainer = () => {
                     id: 2,
                     title: 'Camiseta',
                     description: 'Esta es una camiseta',
+                    stock: 5,
                     price: '100.000',
                     pictureURL: 'https://cutt.ly/TvIWbW7'
                 },
@@ -27,13 +29,14 @@ const ItemListContainer = () => {
                     id: 3,
                     title: 'Pantalon',
                     description: 'Esta es una pantalon',
+                    stock: 2,
                     price: '150.000',
                     pictureURL: 'https://cutt.ly/TvIWbW7'
                 }
             ]
             setTimeout(()=>{
                 resolve(itemsArray)
-            }, 2000)
+            }, 100)
         })
 
         itemsPromise

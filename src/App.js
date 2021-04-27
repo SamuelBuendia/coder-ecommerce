@@ -1,16 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import NavBar from './components/NavBar/NavBar'
+import Home from './components/Home/Home'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import Cart from './components/Cart/Cart'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <ItemListContainer message="Acá va el catálogo" />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route path="/items">
+            <ItemListContainer />
+          </Route>
+          <Route path="/item/:id">
+            <ItemDetailContainer />
+          </Route>   
+          <Route path="/cart">
+            <Cart />
+          </Route>  
+          <Route path="/">
+            <Home />
+          </Route>  
+        </Switch>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
