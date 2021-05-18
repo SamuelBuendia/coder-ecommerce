@@ -19,16 +19,19 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav d-flex w-75 justify-content-around mx-auto">
                         <li className="nav-item">
-                            <NavLink to={`/items`} activeClassName="activeLink" className="nav-link regularLink">Hombre</NavLink>
+                            <NavLink to={`/items/all`} activeClassName="activeLink" className="nav-link regularLink">Todo</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={`/items`} activeClassName="activeLink" className="nav-link regularLink">Mujer</NavLink>
+                            <NavLink to={`/items/hombre`} activeClassName="activeLink" className="nav-link regularLink">Hombre</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={`/items`} activeClassName="activeLink" className="nav-link regularLink">Niños</NavLink>
+                            <NavLink to={`/items/mujer`} activeClassName="activeLink" className="nav-link regularLink">Mujer</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={`/items`} activeClassName="activeLink" className="nav-link regularLink">Niñas</NavLink>
+                            <NavLink to={`/items/nino`} activeClassName="activeLink" className="nav-link regularLink">Niños</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to={`/items/nina`} activeClassName="activeLink" className="nav-link regularLink">Niñas</NavLink>
                         </li>
                     </ul>
                 </div>

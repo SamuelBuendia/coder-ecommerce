@@ -13,27 +13,30 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart'
 import Footer from './components/Footer/Footer'
+import { CartContextComp } from './context/cartContext';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <NavBar />
-        <Switch>
-          <Route path="/items">
-            <ItemListContainer />
-          </Route>
-          <Route path="/item/:id">
-            <ItemDetailContainer />
-          </Route>   
-          <Route path="/cart">
-            <Cart />
-          </Route>  
-          <Route path="/">
-            <Home />
-          </Route>  
-        </Switch>
-        <Footer />
+        <CartContextComp>
+          <NavBar />
+          <Switch>
+            <Route path="/items/:categoryName?">
+              <ItemListContainer />
+            </Route>
+            <Route path="/item/:itemId">
+              <ItemDetailContainer />
+            </Route>   
+            <Route path="/cart">
+              <Cart />
+            </Route>  
+            <Route path="/">
+              <Home />
+            </Route>  
+          </Switch>
+          <Footer />
+        </CartContextComp>
       </div>
     </BrowserRouter>
   );

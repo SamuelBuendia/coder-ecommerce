@@ -1,16 +1,20 @@
-import React, {useState, useEffect } from 'react'
+import React, {useState, useEffect, useContext } from 'react'
+import { CartContext } from '../../context/cartContext';
 
-const ItemCount = (props) => {
+
+const ItemCount = ({product}) => {
 
     const [ productQuantity, setProductQuantity ] = useState()
-    // console.log('aca',props.price)
+
+    const { cartProducts, setCartProducts } = useContext(CartContext)
+    const { cartQuantity, setCartQuantity } = useContext(CartContext)
     
     useEffect(()=>{
         setProductQuantity(1);
     },[])
 
     let addAmount = () => {
-        if (productQuantity < props.stock){
+        if (productQuantity < product.stock){
             setProductQuantity(productQuantity + 1)
         }
     }
@@ -20,6 +24,12 @@ const ItemCount = (props) => {
             setProductQuantity(productQuantity - 1)
         }
     }
+
+    let addToCart = ()=>{
+        setCartProducts([...cartProducts, {product, quantity: productQuantity}])
+    }
+    
+    console.log(cartProducts)
 
     // { productQuantity > 1 ? () => setProductQuantity(productQuantity - 1) : console.log("No hay mas unidades")}
 
@@ -34,7 +44,7 @@ const ItemCount = (props) => {
                     <button type="button" className="btn btn-light" onClick={addAmount}>+</button>
                 </div>
                 <div className="col-12 d-flex justify-content-start mb-3 pl-md-0 w-100">
-                    <button type="button" className="btn btn-success"><img  src="/assets/shoppingCartIcon.svg" width="auto" height="auto" /> Añadir al Carrito</button>
+                    <button type="button" className="btn btn-success" onClick={addToCart}><img  src="/assets/shoppingCartIcon.svg" width="auto" height="auto"/>Añadir al Carrito</button>
                 </div>
             </div>
         </div>
