@@ -9,7 +9,7 @@ import { getFirestore } from '../../firebase'
 const ItemListContainer = () => {
 
     const [ items, setItems ] = useState([])
-    const [loading, setLoading] = useState(false);
+    const [ loading, setLoading ] = useState(false);
 
     const { categoryName } = useParams();
     console.log(categoryName)

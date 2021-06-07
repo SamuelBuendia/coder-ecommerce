@@ -3,7 +3,7 @@ import { CartContext } from '../../context/cartContext';
 
 const CartWidget = (props) => {
 
-    const { cartQuantity, setCartQuantity } = useContext(CartContext)
+    const { cartQuantity } = useContext(CartContext)
 
     useEffect(()=>{
         // setCartQuantity(3)

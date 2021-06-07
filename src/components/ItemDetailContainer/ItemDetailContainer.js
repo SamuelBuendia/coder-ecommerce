@@ -20,6 +20,8 @@ const ItemDetailContainer = () => {
         })
     },[itemId])
 
+    console.log(item)
+
     return (
         <div>
             <ItemDetail key={item.id} info={item} />

@@ -1,7 +1,5 @@
 import React from 'react'
-import ItenCount from '../ItemCount/ItemCount'
-import { Link, NavLink } from 'react-router-dom'
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
+import { Link } from 'react-router-dom'
 
 const ItemTemplate = (props) => {
     

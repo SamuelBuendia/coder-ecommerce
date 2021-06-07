@@ -1,9 +1,22 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import ItenCount from '../ItemCount/ItemCount'
+import { CartContext } from '../../context/cartContext';
+import { Button } from 'bootstrap';
+import { Link } from 'react-router-dom'
+
+
 
 const ItemDetail = ({info}) => {
     
     // console.log(`hola ${info.title}`)
+    const { cartProducts, setCartProducts } = useContext(CartContext)
+
+    useEffect(()=>{
+    },[])
+
+    const isInCart = cartProducts.find(element => element.product.SKU === info.SKU)
+
+    console.log(isInCart)
 
     return (
         <div>
@@ -16,7 +29,15 @@ const ItemDetail = ({info}) => {
                         <h2 className="mb-3">{info.title}</h2>
                         <p className="text-left">{info.description}</p>
                         <h3>Precio Unidad ${info.price}</h3>
-                        <ItenCount product={info} />
+                        { 
+                        isInCart === undefined 
+                        ? 
+                        <ItenCount product={info}/> 
+                        : 
+                        <Link to={`/cart`} className="btn btn-danger">
+                            Finalizar compra
+                        </Link>
+                        }
                     </div>
                 </div>
             </div>

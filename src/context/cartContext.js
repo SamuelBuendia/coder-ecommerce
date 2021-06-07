@@ -8,12 +8,7 @@ export const CartContextComp = ({children}) => {
     const [cartQuantity, setCartQuantity] = useState(0)
 
     // useEffect(()=>{
-    //     console.log("papá",cartProducts)
-    // },[cartProducts])
-
-    // useEffect(()=>{
-    //     console.log("papá",cartQuantity)
-    // },[cartQuantity])
+    // })
 
     return (
         <CartContext.Provider value={{cartProducts, setCartProducts, cartQuantity, setCartQuantity}}>
