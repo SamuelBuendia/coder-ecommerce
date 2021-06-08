@@ -10,33 +10,33 @@ const NavBar = () => {
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <span className="navbar-brand"><Link to={`/`} className="regularLink">Ecommerce</Link></span>
+                <span className="navbar-brand"><Link to={`/`} data-toggle="collapse" data-target=".navbar-collapse.show" className="regularLink">Ecommerce</Link></span>
                 <div className="d-md-none">
-                    <Link to={`/cart`} className="regularLink">
+                    <Link to={`/cart`} className="regularLink" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <CartWidget />
                     </Link>
                 </div>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav d-flex w-75 justify-content-around mx-auto">
+                    <ul className="navbar-nav d-flex w-75 justify-content-around mx-auto nav-menu">
                         <li className="nav-item">
-                            <NavLink to={`/items/all`} activeClassName="activeLink" className="nav-link regularLink">Todo</NavLink>
+                            <NavLink to={`/items/all`} data-toggle="collapse" data-target=".navbar-collapse.show" activeClassName="activeLink" className="nav-link regularLink">Todo</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={`/items/hombre`} activeClassName="activeLink" className="nav-link regularLink">Hombre</NavLink>
+                            <NavLink to={`/items/hombre`} data-toggle="collapse" data-target=".navbar-collapse.show" activeClassName="activeLink" className="nav-link regularLink">Hombre</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={`/items/mujer`} activeClassName="activeLink" className="nav-link regularLink">Mujer</NavLink>
+                            <NavLink to={`/items/mujer`} data-toggle="collapse" data-target=".navbar-collapse.show" activeClassName="activeLink" className="nav-link regularLink">Mujer</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={`/items/nino`} activeClassName="activeLink" className="nav-link regularLink">Niños</NavLink>
+                            <NavLink to={`/items/nino`} data-toggle="collapse" data-target=".navbar-collapse.show" activeClassName="activeLink" className="nav-link regularLink">Niños</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={`/items/nina`} activeClassName="activeLink" className="nav-link regularLink">Niñas</NavLink>
+                            <NavLink to={`/items/nina`} data-toggle="collapse" data-target=".navbar-collapse.show" activeClassName="activeLink" className="nav-link regularLink">Niñas</NavLink>
                         </li>
                     </ul>
                 </div>
                 <div className="d-none d-md-block ">
-                    <Link to={`/cart`} className="regularLink">
+                    <Link to={`/cart`} data-toggle="collapse" data-target=".navbar-collapse.show" className="regularLink">
                         <CartWidget />
                     </Link>
                 </div>

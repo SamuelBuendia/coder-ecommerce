@@ -22,10 +22,10 @@ const ItemDetail = ({info}) => {
         <div>
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-6 px-5">
+                    <div className="col-md-6 px-5">
                         <img className="img-fluid" src={info.pictureURL} />    
                     </div>
-                    <div className="col-6 px-5 d-flex flex-column justify-content-center align-items-start">
+                    <div className="col-md-6 px-5 d-flex flex-column justify-content-center align-items-start">
                         <h2 className="mb-3">{info.title}</h2>
                         <p className="text-left">{info.description}</p>
                         <h3>Precio Unidad ${info.price}</h3>
