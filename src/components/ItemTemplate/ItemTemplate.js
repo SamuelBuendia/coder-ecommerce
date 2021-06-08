@@ -6,7 +6,7 @@ const ItemTemplate = (props) => {
     // console.log(props.info.stock)
 
     return (
-        <div className="col-4 py-5">
+        <div className="col-md-4 py-5">
             <div className="card text-center">
                 <div className="card-header">
                     Id - {props.info.id}

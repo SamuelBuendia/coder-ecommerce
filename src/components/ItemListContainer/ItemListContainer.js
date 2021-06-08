@@ -55,8 +55,8 @@ const ItemListContainer = () => {
     },[categoryName])
 
     return (
-        <div>
-            { loading && <div style={{height: '60vh'}} className="d-flex align-items-center justify-content-center"><Spinner animation='border' variant='danger' /></div> }
+        <div style={{minHeight: '90vh'}} className="d-flex align-items-center justify-content-center">
+            { loading && <div><Spinner animation='border' variant='danger' /></div> }
             { !loading && <ItemList items={items} />}
         </div>
     )
