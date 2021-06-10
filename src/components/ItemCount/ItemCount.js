@@ -10,7 +10,7 @@ const ItemCount = ({product, quantity}) => {
     const { cartQuantity, setCartQuantity } = useContext(CartContext)
     
     useEffect(()=>{
-        console.log(quantity)
+        // console.log(quantity)
         if (quantity) {
             setProductQuantity(quantity);
         } else {
@@ -26,6 +26,8 @@ const ItemCount = ({product, quantity}) => {
                 notExist.quantity = productQuantity + 1
                 setCartQuantity(cartQuantity + 1)
             }
+        } else {
+            console.log('no hay mas unidades');
         }
     }
 

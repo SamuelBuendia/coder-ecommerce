@@ -12,6 +12,7 @@ import Home from './components/Home/Home'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart'
+import Checkout from './components/Checkout/Checkout'
 import Footer from './components/Footer/Footer'
 import { CartContextComp } from './context/cartContext';
 
@@ -30,6 +31,9 @@ function App() {
             </Route>   
             <Route path="/cart">
               <Cart />
+            </Route> 
+            <Route path="/checkout">
+              <Checkout />
             </Route>  
             <Route path="/">
               <Home />

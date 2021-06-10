@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
         getOneItem.get()
         .then((query)=>{
             query.size > 0 ? console.log('Producto no disponible') : //console.log(query.data());
-            setItem(query.data());
+            setItem({...query.data(), id: query.id});
         })
     },[itemId])
 
