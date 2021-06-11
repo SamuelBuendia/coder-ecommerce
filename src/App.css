@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.card-body {
+  background-color: #eceef0;
+}
+
+.gris-adidas {
+  background-color: #eceef0;
+}

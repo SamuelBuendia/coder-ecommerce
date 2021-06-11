@@ -18,17 +18,23 @@ const ItemDetail = ({info}) => {
 
     console.log(isInCart)
 
+    const formatterPeso = new Intl.NumberFormat('es-CO', {
+        style: 'currency',
+        currency: 'COP',
+        minimumFractionDigits: 0
+    })
+
     return (
         <div>
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-6 px-5">
+                    <div className="col-md-6 px-5 py-5 gris-adidas">
                         <img className="img-fluid" src={info.pictureURL} />    
                     </div>
                     <div className="col-md-6 px-5 d-flex flex-column justify-content-center align-items-start">
                         <h2 className="mb-3">{info.title}</h2>
                         <p className="text-left">{info.description}</p>
-                        <h3>Precio Unidad ${info.price}</h3>
+                        <h3>Precio Unidad {formatterPeso.format(info.price)}</h3>
                         { 
                         isInCart === undefined 
                         ? 

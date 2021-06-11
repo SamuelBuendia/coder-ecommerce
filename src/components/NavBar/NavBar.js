@@ -10,7 +10,7 @@ const NavBar = () => {
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <span className="navbar-brand"><Link to={`/`} data-toggle="collapse" data-target=".navbar-collapse.show" className="regularLink">Ecommerce</Link></span>
+                <span className="navbar-brand"><Link to={`/`} data-toggle="collapse" data-target=".navbar-collapse.show" className="regularLink">Adidas</Link></span>
                 <div className="d-md-none">
                     <Link to={`/cart`} className="regularLink" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <CartWidget />
@@ -28,10 +28,10 @@ const NavBar = () => {
                             <NavLink to={`/items/mujer`} data-toggle="collapse" data-target=".navbar-collapse.show" activeClassName="activeLink" className="nav-link regularLink">Mujer</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={`/items/nino`} data-toggle="collapse" data-target=".navbar-collapse.show" activeClassName="activeLink" className="nav-link regularLink">Niños</NavLink>
+                            <NavLink to={`/items/ninos`} data-toggle="collapse" data-target=".navbar-collapse.show" activeClassName="activeLink" className="nav-link regularLink">Niños</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={`/items/nina`} data-toggle="collapse" data-target=".navbar-collapse.show" activeClassName="activeLink" className="nav-link regularLink">Niñas</NavLink>
+                            <NavLink to={`/items/accesorios`} data-toggle="collapse" data-target=".navbar-collapse.show" activeClassName="activeLink" className="nav-link regularLink">Accesorios</NavLink>
                         </li>
                     </ul>
                 </div>

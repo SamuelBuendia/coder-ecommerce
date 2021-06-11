@@ -5,6 +5,7 @@ import ItenCount from '../ItemCount/ItemCount'
 import { Link, NavLink } from 'react-router-dom'
 import { getFirestore } from '../../firebase'
 import firebase from 'firebase/app';
+import { Redirect } from 'react-router';
 import 'firebase/firestore';
 
 const Checkout = () => {
@@ -65,8 +66,8 @@ const Checkout = () => {
         try {
             const doc = await orders.add(newOrder);
             console.log(doc.id);
-            setCartProducts([])
-            setCartQuantity(0)
+            setCartProducts([]);
+            setCartQuantity(0);
         } catch (err) {
             console.log(err);
         }
@@ -74,36 +75,40 @@ const Checkout = () => {
 
     return (
         <div style={{minHeight:'90vh'}} className="container">
-            <div className="row">
+            <div className="row my-4">
                 <div className="col-md-6">
-                    <h2>Información general</h2>
-                    <form className="text-left"> 
-                        <div className="form-group">
-                            <label for="formGroupExampleInput">Nombre</label>
+                    <h5 className="text-left mb-3">1. Información general</h5>
+                    <form className="text-left row"> 
+                        <div className="form-group col-6">
+                            <label>Nombre</label>
                             <input type="text" className="form-control" name="name" value={client.name} placeholder="Name" onChange={changeDataClient} />
                         </div>
-                        <div className="form-group">
-                            <label for="formGroupExampleInput2">Apellido</label>
+                        <div className="form-group col-6">
+                            <label>Apellido</label>
                             <input type="text" className="form-control" name="lastname" value={client.lastname} placeholder="Lastname" onChange={changeDataClient} />
                         </div>
-                        <div className="form-group">
-                            <label for="formGroupExampleInput2">Documento ID</label>
+                        <div className="form-group col-6">
+                            <label>Documento ID</label>
                             <input type="text" className="form-control" name="document" value={client.document} placeholder="Document" onChange={changeDataClient} />
                         </div>
-                        <div className="form-group">
-                            <label for="formGroupExampleInput2">Correo</label>
-                            <input type="email" className="form-control" name="email" value={client.email} placeholder="Email" onChange={changeDataClient} />
-                        </div>
-                        <div className="form-group">
-                            <label for="formGroupExampleInput2">Celular</label>
+                        <div className="form-group col-6">
+                            <label>Celular</label>
                             <input type="number" className="form-control" name="phone" value={client.phone} placeholder="Mobile" onChange={changeDataClient} />
                         </div>
+                        <div className="form-group col-12">
+                            <label>Correo</label>
+                            <input type="email" className="form-control" name="email" value={client.email} placeholder="Email" onChange={changeDataClient} />
+                        </div>
                     </form>
+                </div>
+                <div className="col-6">
+                    holas
                 </div>
             </div>
 
             <div className="row">
                 <div className="col-12">
+                    <Link to={`/cart`} className="btn btn-success regularLink">Volver al carrito</Link>
                     <button className="btn btn-danger" onClick={() => createOrder()}>Terminar compra</button>
                 </div>
             </div>

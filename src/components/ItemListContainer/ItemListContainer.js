@@ -26,11 +26,11 @@ const ItemListContainer = () => {
           case 'mujer':
             var itemsFiltered = itemsCollection.where('categoryId','==','3Wl1FipgH56d52qPuyla');
             break;
-          case 'nino':
+          case 'ninos':
             var itemsFiltered = itemsCollection.where('categoryId','==','5MhyA1Clum6afL3qs3LB');
             break;
-          case 'nina':
-            var itemsFiltered = itemsCollection.where('categoryId','==','z0f253J8SXC2e4LM63vm');
+          case 'accesorios':
+            var itemsFiltered = itemsCollection.where('categoryId','==','gmQ1yYGUeuQmdMi8BJOg');
             break;
           default:
             var itemsFiltered = itemsCollection;

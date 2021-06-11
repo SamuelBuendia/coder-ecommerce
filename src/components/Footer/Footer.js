@@ -5,7 +5,7 @@ const Footer = () => {
 
     return (
         <footer>
-        <section className="container-fluid">
+        <section className="container-fluid pt-4">
           <div className="row py-4 justify-content-center align-items-center text-center">
             <div className="col-12 col-md-6">
               <h5>Contáctame</h5>
