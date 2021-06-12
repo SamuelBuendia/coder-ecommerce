@@ -16,8 +16,6 @@ const ItemDetail = ({info}) => {
 
     const isInCart = cartProducts.find(element => element.product.SKU === info.SKU)
 
-    console.log(isInCart)
-
     const formatterPeso = new Intl.NumberFormat('es-CO', {
         style: 'currency',
         currency: 'COP',
@@ -32,17 +30,34 @@ const ItemDetail = ({info}) => {
                         <img className="img-fluid" src={info.pictureURL} />    
                     </div>
                     <div className="col-md-6 px-5 d-flex flex-column justify-content-center align-items-start">
-                        <h2 className="mb-3">{info.title}</h2>
-                        <p className="text-left">{info.description}</p>
-                        <h3>Precio Unidad {formatterPeso.format(info.price)}</h3>
+                        <h2 className="mb-3 mt-4">{info.title}</h2>
+                        <p className="text-justify">{info.description}</p>
+                        <h3 className="text-center mb-4">Precio Unidad {formatterPeso.format(info.price)}</h3>
                         { 
                         isInCart === undefined 
                         ? 
                         <ItenCount product={info}/> 
                         : 
-                        <Link to={`/cart`} className="btn btn-danger">
-                            Finalizar compra
-                        </Link>
+                        <div className="container">
+                            <div className="row"> 
+                                <div className="col-md-12 pl-md-0 d-flex justify-content-center justify-content-md-start">
+                                    <Link to={`/cart`} className="btn btn-danger" style={{paddingRight:'2rem', paddingLeft:'2rem', }}>
+                                        Finalizar compra
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                        {
+                        <div className="container">
+                            <div className="row">   
+                                <div className="col-md-12 my-2 pl-md-0 d-flex justify-content-center justify-content-md-start">
+                                    <Link to={`/items/all`} className="btn btn-primary py-2 px-4">
+                                        Seguir comprando
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                         }
                     </div>
                 </div>
