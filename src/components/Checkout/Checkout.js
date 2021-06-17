@@ -31,7 +31,9 @@ const Checkout = () => {
 
     console.log(cartProducts)
     
-    const createOrder = async () => {
+    const createOrder = async (event) => {
+        console.log(event)
+        event.preventDefault();
         const newOrder = {
             buyer: {
                 name: client.name,
@@ -54,7 +56,7 @@ const Checkout = () => {
         const orders = db.collection("orders");
 
         const itemsToUpdate = db.collection("items")
-            .where(firebase.firestore.FieldPath.documentId(), "in", cartProducts.map(item => item.product.id));
+            .where(firebase.firestore.FieldPath.documentId(), 'in', cartProducts.map(item => item.product.id));
         console.log(itemsToUpdate)
         const query = await itemsToUpdate.get();
         const batch = db.batch();
@@ -101,7 +103,7 @@ const Checkout = () => {
                         </div>
                         <div className="col-12 d-flex justify-content-between">
                             <Link to={`/cart`} className="btn btn-success regularLink">Volver al carrito</Link>
-                            <button className="btn btn-danger" onClick={() => createOrder()}>Terminar compra</button>
+                            <button className="btn btn-danger" onClick={createOrder}>Terminar compra</button>
                         </div>
                     </form>
                 </div>
