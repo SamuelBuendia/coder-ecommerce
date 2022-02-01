@@ -7,7 +7,7 @@ const CartWidget = (props) => {
 
     useEffect(()=>{
         // setCartQuantity(3)
-        // console.log(cartQuantity)
+        //console.log(cartQuantity)
     },[])
 
     return (

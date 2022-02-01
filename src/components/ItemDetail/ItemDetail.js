@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const ItemDetail = ({info}) => {
     
-    // console.log(`hola ${info.title}`)
+    //console.log(`hola ${info.title}`)
     const { cartProducts, setCartProducts } = useContext(CartContext)
 
     useEffect(()=>{

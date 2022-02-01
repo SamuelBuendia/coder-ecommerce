@@ -15,12 +15,12 @@ const ItemDetailContainer = () => {
         const getOneItem = db.collection('items').doc(itemId);
         getOneItem.get()
         .then((query)=>{
-            query.size > 0 ? console.log('Producto no disponible') : //console.log(query.data());
+            query.size > 0 ? console.log('Producto no disponible') : console.log(query.data());
             setItem({...query.data(), id: query.id});
         })
     },[itemId])
 
-    console.log(item)
+    //console.log(item)
 
     return (
         <div>

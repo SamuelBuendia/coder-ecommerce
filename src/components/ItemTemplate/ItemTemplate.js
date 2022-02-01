@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const ItemTemplate = (props) => {
     
-    // console.log(props.info.stock)
+    // //console.log(props.info.stock)
 
     return (
         <div className="col-md-4 pt-4 pt-md-5">
